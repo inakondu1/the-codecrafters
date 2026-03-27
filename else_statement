@@ -1,0 +1,5 @@
+## Go if else Statement
+
+“If something is true, do this — otherwise, do something else.”
+
+A go else statement helps the program choose between two different actions depending on a condition.

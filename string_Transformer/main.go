@@ -35,6 +35,7 @@ func main() {
 			fmt.Println("no text provided")
 			continue
 		}
+		
 
 		fmt.Println("chose a Transformation:")
 		fmt.Println("<1> Toupper")

@@ -1,0 +1,24 @@
+package main
+
+import (
+	"strconv"
+	"strings"
+)
+
+func binTodecimal(s string) string {
+	words := strings.Fields(s)
+
+	for i := 0; i < len(words); i++ {
+
+		switch words[i] {
+		case "(bin)":
+			value, err := strconv.ParseInt(words[i-1], 2, 64)
+			if err == nil {
+				words[i-1] = strconv.FormatInt(value, 10)
+			}
+			words = append(words[:i], words[i+1:]...)
+			i--
+		}
+	}
+	return strings.Join(words, " ")
+}

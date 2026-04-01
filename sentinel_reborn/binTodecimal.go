@@ -18,7 +18,16 @@ func binTodecimal(s string) string {
 			}
 			words = append(words[:i], words[i+1:]...)
 			i--
+		case "(hex)":
+			value, err := strconv.ParseInt(words[i-1], 16, 64)
+			if err == nil {
+				words[i-1] = strconv.FormatInt(value, 10)
+			}
+
+			words = append(words[:i], words[i+1:]...)
+			i--
 		}
+		
 	}
 	return strings.Join(words, " ")
 }

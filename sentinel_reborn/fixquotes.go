@@ -1,19 +1,14 @@
 package main
 
-func FixQuotes(words []string) []string {
-	for i := 0; i < len(words); i++ {
+import "regexp"
 
-		if words[i] == "'" && i+1 < len(words) {
-			words[i+1] = "'" + words[i+1]
-			words = append(words[:i], words[i+1:]...)
-		}
+func FixQuotes(text string) string {
 
-		if i < len(words) && words[i] == "'" {
-			words[i-1] = words[i-1] + "'"
-			words = append(words[:i], words[i+1:]...)
-			i--
-		}
-	}
-	// hello
-	return words
+    reDouble := regexp.MustCompile(`"\s*([^"]*?)\s*"`)
+    text = reDouble.ReplaceAllString(text, `"$1"`)
+
+    reSingle := regexp.MustCompile(`'\s*([^']*?)\s*'`)
+    text = reSingle.ReplaceAllString(text, `'$1'`)
+
+    return text
 }

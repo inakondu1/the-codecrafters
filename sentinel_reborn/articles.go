@@ -12,7 +12,7 @@ func Article(s string) string {
 		if parts[1] == "A" {
 			return "An " + parts[2]
 		}
-		return "an " + parts[2]
+		return "An " + parts[2]
 
 	})
 

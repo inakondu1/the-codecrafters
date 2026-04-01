@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
 )
@@ -25,9 +24,4 @@ func HexToDecimal(s string) string {
 	}
 	return strings.Join(words, " ")
 
-}
-
-func main() {
-	fmt.Println(HexToDecimal("we have 1E (hex) files added"))
-	fmt.Println(HexToDecimal("we have 1E (hex) files added"))
 }

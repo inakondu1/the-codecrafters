@@ -15,8 +15,3 @@ func ToLower(s string) string {
 	}
 	return strings.Join(w, " ")
 }
-
-func main() {
-	fmt.Println(ToLower("i should stop SHOUTING (low)"))
-
-}

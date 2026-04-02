@@ -1,0 +1,6 @@
+SENTINEL FIELD REPORT — PROCESSED
+001. This is a normal line with spaces
+002. ✦ ACTION: Buy more coffee
+003. [REDACTED]: The secret password is pizza
+004. ✦ ACTION: Finish the codecrafters lab
+005. This is a final report line.

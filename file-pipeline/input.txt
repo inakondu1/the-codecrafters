@@ -1,0 +1,8 @@
+This is a normal line with spaces  
+TODO: Buy more coffee
+---
+CLASSIFIED: The secret password is pizza
+    
+TODO: Finish the codecrafters lab
+----------
+This is a final report line.

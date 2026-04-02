@@ -1,7 +1,7 @@
 /*
  ═══════════════════════════════════════════
 // SQUAD PIPELINE CONTRACT
-// Squad: Solo (or your squad name)
+// Squad: Solo (THE STRUCT)
 ... (rest of the header)
  ═══════════════════════════════════════════
 */
@@ -43,7 +43,7 @@ import (
 )
 
 func main() {
-	// 1. Validate arguments
+	
 	if len(os.Args) != 3 {
 		fmt.Println("Usage: go run . <input.txt> <output.txt>")
 		return
@@ -52,13 +52,13 @@ func main() {
 	inputFile := os.Args[1]
 	outputFile := os.Args[2]
 
-	// Prevent same file
+	
 	if inputFile == outputFile {
 		fmt.Println("✗ Input and output cannot be the same file.")
 		return
 	}
 
-	// 2. Open input file
+	
 	file, err := os.Open(inputFile)
 	if err != nil {
 		fmt.Println("✗ File not found:", inputFile)
@@ -72,17 +72,17 @@ func main() {
 	linesRead := 0
 	linesRemoved := 0
 
-	// 3. Read line by line
+	
 	for scanner.Scan() {
 		line := scanner.Text()
 		linesRead++
 
-		// === PIPELINE START ===
+		
 
 		line = trim(line)
 		line = replaceTODO(line)
 		line = replaceClassified(line)
-
+ 
 		if isRemovable(line) {
 			linesRemoved++
 			continue
@@ -90,15 +90,14 @@ func main() {
 
 		processedLines = append(processedLines, line)
 
-		// === PIPELINE END ===
+		
 	}
 
-	// 4. Add numbering
+	
 	for i := range processedLines {
 		processedLines[i] = addLineNumber(processedLines[i], i+1)
 	}
 
-	// 5. Write output file
 	out, err := os.Create(outputFile)
 	if err != nil {
 		fmt.Println("✗ Cannot write to output file")
@@ -108,7 +107,7 @@ func main() {
 
 	writer := bufio.NewWriter(out)
 
-	// Header
+	
 	writer.WriteString("SENTINEL FIELD REPORT — PROCESSED\n")
 
 	for _, line := range processedLines {
@@ -117,7 +116,7 @@ func main() {
 
 	writer.Flush()
 
-	// 6. Terminal summary
+	
 	fmt.Println("✦ Lines read    :", linesRead)
 	fmt.Println("✦ Lines written :", len(processedLines))
 	fmt.Println("✦ Lines removed :", linesRemoved)
@@ -137,7 +136,7 @@ func isRemovable(line string) bool {
 		return true
 	}
 
-	// Check if only dashes
+
 	for _, ch := range line {
 		if ch != '-' {
 			return false

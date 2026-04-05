@@ -1,15 +1,10 @@
-/*
+
  ═══════════════════════════════════════════
 // SQUAD PIPELINE CONTRACT
 // Squad: Solo (THE STRUCT)
 ... (rest of the header)
- ═══════════════════════════════════════════
-*/
+ ════════════════════════════════════
 
-// ... rest of your code
-// SQUAD PIPELINE CONTRACT
-// Squad: Solo (or your squad name)
-// ───────────────────────────────────────────
 // Input line types:
 //   - Normal lines
 //   - ALL CAPS lines
